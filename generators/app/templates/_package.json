@@ -1,0 +1,45 @@
+{
+  "name": "<%= appName %>",
+  "version": "1.0.0",
+  "description": "Google Apps Script Application with Browserify + Babel",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint src",
+    "clean": "rimraf dist",
+    "initialize": "mkdirp dist",
+    "watch": "npm-run-all initialize -p watch:gs",
+    "build:gs":
+      "browserify ./src/index.js -t babelify -p gasify -o ./dist/Code.gs",
+    "watch:gs":
+      "watchify ./src/index.js -t babelify -p gasify -o ./dist/Code.gs",
+    "build": "npm-run-all clean initialize build:gs",
+    "upload": "gas upload",
+    "deploy": "npm-run-all build upload"
+  },
+  "keywords": ["google", "apps-script"],
+  "author": {
+    "name": "<%= name %>",
+    "email": "<%= email %>"
+  },
+  "repository": "<%= githubUsername %>/<%= appName %>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-gas": "1.0.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.1.0",
+    "browserify-shim": "^3.8.13",
+    "eslint": "^4.9.0",
+    "gas-manager": "^0.4.3",
+    "gasify": "0.1.2",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "4.1.1",
+    "onchange": "3.2.1",
+    "rimraf": "^2.4.4",
+    "watch": "^0.17.1",
+    "watchify": "^3.6.1"
+  }
+}
