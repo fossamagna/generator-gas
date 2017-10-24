@@ -1,0 +1,60 @@
+{
+  "name": "generator-gas",
+  "version": "0.0.0",
+  "description": "Google Apps Script Application Generator",
+  "homepage": "",
+  "author": {
+    "name": "fossamagna",
+    "email": "fossamagna2@gmail.com",
+    "url": "https://github.com/fossamagna"
+  },
+  "files": ["generators"],
+  "main": "generators/index.js",
+  "keywords": ["Google Apps Script", "yeoman-generator"],
+  "devDependencies": {
+    "coveralls": "^2.13.1",
+    "eslint": "^4.9.0",
+    "husky": "^0.14.3",
+    "jest": "^21.0.0",
+    "jest-cli": "^21.0.0",
+    "lint-staged": "^4.2.1",
+    "nsp": "^2.6.3",
+    "prettier": "^1.7.0",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.7.0"
+  },
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "underscore.string": "^3.3.4",
+    "yeoman-generator": "1.1.1",
+    "yosay": "^2.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "prepublish": "nsp check",
+    "pretest": "eslint .",
+    "precommit": "lint-staged",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"],
+    "*.json": ["prettier --write", "git add"]
+  },
+  "eslintConfig": {
+    "extends": ["eslint:recommended"],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
+  },
+  "repository": "fossamagna/generator-gas",
+  "license": "MIT"
+}
