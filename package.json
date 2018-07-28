@@ -8,9 +8,14 @@
     "email": "fossamagna2@gmail.com",
     "url": "https://github.com/fossamagna"
   },
-  "files": ["generators"],
+  "files": [
+    "generators"
+  ],
   "main": "generators/index.js",
-  "keywords": ["Google Apps Script", "yeoman-generator"],
+  "keywords": [
+    "Google Apps Script",
+    "yeoman-generator"
+  ],
   "devDependencies": {
     "coveralls": "^2.13.1",
     "eslint": "^4.9.0",
@@ -26,7 +31,7 @@
   "dependencies": {
     "chalk": "^2.1.0",
     "underscore.string": "^3.3.4",
-    "yeoman-generator": "1.1.1",
+    "yeoman-generator": "3.1.0",
     "yosay": "^2.0.1"
   },
   "jest": {
@@ -39,11 +44,19 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.json": ["prettier --write", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "eslintConfig": {
-    "extends": ["eslint:recommended"],
+    "extends": [
+      "eslint:recommended"
+    ],
     "env": {
       "jest": true,
       "node": true
