@@ -29,10 +29,10 @@ module.exports = class extends Generator {
 			}
 		];
 
-    return this.prompt(prompts).then(props => {
-      // To access props later use this.props.someAnswer;
-      this.props = props;
-    });
+		return this.prompt(prompts).then(props => {
+			// To access props later use this.props.someAnswer;
+			this.props = props;
+		});
 	}
 
 	writing() {
@@ -58,10 +58,10 @@ module.exports = class extends Generator {
 			this.destinationPath('_gitignore'),
 			this.destinationPath('.gitignore')
 		);
-    this.fs.move(
-      this.destinationPath('_eslintrc.json'),
-      this.destinationPath('.eslintrc.json')
-    );
+		this.fs.move(
+			this.destinationPath('_eslintrc.json'),
+			this.destinationPath('.eslintrc.json')
+		);
 	}
 
 	install() {
