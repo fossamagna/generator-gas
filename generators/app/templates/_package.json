@@ -8,12 +8,16 @@
     "clean": "rimraf dist",
     "initialize": "mkdirp dist",
     "watch": "npm-run-all initialize -p watch:gs",
+    "prefetch:manifest": "npm-run-all initialize",
+    "fetch:manifest": "clasp pull",
+    "postfetch:manifest": "cpr ./dist/appsscript.json ./src/appsscript.json -o",
+    "prebuild:gs": "cpr ./src/appsscript.json ./dist/appsscript.json",
     "build:gs":
       "browserify ./src/index.js -t babelify -p gasify -o ./dist/Code.gs",
     "watch:gs":
       "watchify ./src/index.js -t babelify -p gasify -o ./dist/Code.gs",
     "build": "npm-run-all clean initialize build:gs",
-    "upload": "gas upload",
+    "upload": "claps push",
     "deploy": "npm-run-all build upload"
   },
   "keywords": ["google", "apps-script"],
@@ -26,12 +30,13 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.55",
     "@babel/preset-env": "^7.0.0-beta.55",
+    "@google/clasp": "1.4.0",
     "babel-preset-gas": "1.0.1",
     "babelify": "^9.0.0",
     "browserify": "^16.2.2",
     "browserify-shim": "^3.8.13",
+    "cpr": "^3.0.1",
     "eslint": "^5.2.0",
-    "gas-manager": "^0.6.0",
     "gasify": "0.1.2",
     "mkdirp": "^0.5.1",
     "npm-run-all": "4.1.3",
