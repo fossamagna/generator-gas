@@ -15,7 +15,7 @@ describe('generator-gas:app', () => {
       '.babelrc',
       '.gitignore',
       'package.json',
-      'gas-project.json',
+      '.clasp.json',
       '.eslintrc.json',
       'README.md',
       'src/index.js',

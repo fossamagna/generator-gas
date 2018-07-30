@@ -62,6 +62,10 @@ module.exports = class extends Generator {
 			this.destinationPath('_eslintrc.json'),
 			this.destinationPath('.eslintrc.json')
 		);
+		this.fs.move(
+			this.destinationPath('_clasp.json'),
+			this.destinationPath('.clasp.json')
+		);
 	}
 
 	install() {

@@ -4,24 +4,17 @@ Google Apps Script Application with [Browserify](http://browserify.org) + [Babel
 
 # For Local Development
 
-For Apps Script local development, You need to use Drive API to export a Apps Script Project on Google Drive. This project will be use [gas-manager](https://github.com/soundTricker/gas-manager) for import Apps Script Project.
+For Apps Script local development, You need to be enable Apps Script API: https://script.google.com/home/usersettings. This project will be use [clasp](https://github.com/google/clasp) to push Apps Script Project.
 
-gas-project.json:
+.clasp.json:
 ```json
 {
-  "src": {
-    "fileId": "<YOUR_SCRIPT_ID>",
-    "files": {
-      "Code": {
-        "path": "dist/Code.gs",
-        "type": "server_js"
-      }
-    }
-  }
+    "scriptId": "<YOUR_SCRIPT_ID>",
+    "rootDir": "dist"
 }
 ```
 
-Please see [gas-manager](https://github.com/soundTricker/gas-manager#cli) and [Importing and Exporting Projects Page](https://developers.google.com/apps-script/import-export) for details.
+Please see [clasp](https://github.com/google/clasp) and [Command Line Interface using clasp](https://developers.google.com/apps-script/guides/clasp) for details.
 
 # Deploy
 
@@ -30,4 +23,4 @@ $ npm run deploy
 ```
 
 * Server JavaScript files will be compiled by Browserify and [gasify](https://www.npmjs.com/package/gasify).
-* Sync compiled `Code.gs` to Google Apps Script Project in Google Drive by gas-manager.
+* Sync compiled `Code.gs` to Google Apps Script Project in Google Drive by clasp.
