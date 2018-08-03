@@ -2,7 +2,7 @@
   "name": "generator-gas",
   "version": "0.3.0",
   "description": "Google Apps Script Application Generator",
-  "homepage": "",
+  "homepage": "https://github.com/fossamagna/generator-gas",
   "author": {
     "name": "fossamagna",
     "email": "fossamagna2@gmail.com",
