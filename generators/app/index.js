@@ -35,40 +35,12 @@ module.exports = class extends Generator {
 		});
 	}
 
-	writing() {
-		this.fs.copyTpl(
-			this.templatePath('**'),
-			this.destinationPath(),
-			{
-				appName: this.props.appName,
-				githubUsername: this.props.githubUsername,
-				name: this.user.git.name(),
-				email: this.user.git.email()
-			}
-		);
-		this.fs.move(
-			this.destinationPath('_package.json'),
-			this.destinationPath('package.json')
-		);
-		this.fs.move(
-			this.destinationPath('_babelrc'),
-			this.destinationPath('.babelrc')
-		);
-		this.fs.move(
-			this.destinationPath('_gitignore'),
-			this.destinationPath('.gitignore')
-		);
-		this.fs.move(
-			this.destinationPath('_eslintrc.json'),
-			this.destinationPath('.eslintrc.json')
-		);
-		this.fs.move(
-			this.destinationPath('_clasp.json'),
-			this.destinationPath('.clasp.json')
-		);
-	}
-
-	install() {
-		this.installDependencies({bower: false});
+	configuring() {
+		this.composeWith(require.resolve('../babel'), {
+			appName: this.props.appName,
+			githubUsername: this.props.githubUsername,
+			name: this.user.git.name(),
+			email: this.user.git.email()
+		});
 	}
 };
