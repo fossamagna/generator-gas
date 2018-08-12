@@ -1,0 +1,46 @@
+{
+  "name": "<%= appName %>",
+  "version": "1.0.0",
+  "description": "Google Apps Script Application with Browserify + TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint src",
+    "clean": "rimraf dist",
+    "initialize": "mkdirp dist",
+    "watch": "npm-run-all initialize -p watch:gs",
+    "prefetch:manifest": "npm-run-all initialize",
+    "fetch:manifest": "clasp pull",
+    "postfetch:manifest": "cpx ./dist/appsscript.json ./src/appsscript.json",
+    "prebuild:gs": "cpx ./src/appsscript.json ./dist/appsscript.json",
+    "build:gs":
+      "browserify ./src/index.ts -p tsify -p gasify -o ./dist/Code.js",
+    "watch:gs": "watchify ./src/index.ts -p tsify -p gasify -o ./dist/Code.js",
+    "build": "npm-run-all clean initialize build:gs",
+    "upload": "claps push",
+    "deploy": "npm-run-all build upload"
+  },
+  "keywords": ["google", "apps-script"],
+  "author": {
+    "name": "<%= name %>",
+    "email": "<%= email %>"
+  },
+  "repository": "<%= githubUsername %>/<%= appName %>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/google-apps-script": "0.0.27",
+    "@google/clasp": "1.4.0",
+    "browserify": "16.2.2",
+    "browserify-shim": "3.8.13",
+    "cpx": "1.5.0",
+    "eslint": "5.2.0",
+    "gasify": "0.1.2",
+    "mkdirp": "0.5.1",
+    "npm-run-all": "4.1.3",
+    "onchange": "4.1.0",
+    "rimraf": "2.4.4",
+    "tsify": "4.0.0",
+    "typescript": "3.0.1",
+    "watch": "1.0.2",
+    "watchify": "3.6.1"
+  }
+}

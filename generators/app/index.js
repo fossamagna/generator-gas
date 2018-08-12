@@ -26,6 +26,22 @@ module.exports = class extends Generator {
 				validate: val => {
 					return val.length > 0 ? true : 'You have to provide a username';
 				}
+			},
+			{	
+				type: 'list',
+				name: 'transpiler',
+				message: 'What do the transpiler use in your app?',
+				default: 'typescript',
+				choices: [
+					{
+						name: 'TypeScript',
+						value: 'typescript'
+					},
+					{
+						name: 'Babel',
+						value: 'babel'
+					}
+				]
 			}
 		];
 
@@ -36,7 +52,8 @@ module.exports = class extends Generator {
 	}
 
 	configuring() {
-		this.composeWith(require.resolve('../babel'), {
+		const transpiler = this.props.transpiler;
+		this.composeWith(require.resolve(`../${transpiler}`), {
 			appName: this.props.appName,
 			githubUsername: this.props.githubUsername,
 			name: this.user.git.name(),

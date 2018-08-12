@@ -1,5 +1,10 @@
 # generator-gas [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
->
+> Generator for Google Apps Script Project.
+
+You can choose transpiler to local development which of the following:
+
+- TypeScript
+- Babel
 
 ## Installation
 
