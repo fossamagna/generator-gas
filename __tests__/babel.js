@@ -3,14 +3,15 @@ const path = require('path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 
-describe('generator-gas:app', () => {
+describe('generator-gas:babel', () => {
 	beforeAll(() => {
 		return helpers
-      .run(path.join(__dirname, '../generators/app'))
-			.withPrompts({
+      .run(path.join(__dirname, '../generators/babel'))
+			.withOptions({
         appName: 'test-app',
         githubUsername: 'fossamagna',
-        transpiler: 'babel'
+        name: 'Full Name',
+        email: 'fossamagna2@gmail.com'
       });
 	});
 
@@ -25,5 +26,14 @@ describe('generator-gas:app', () => {
       'src/index.js',
       'src/hello.js'
     ]);
+
+    assert.jsonFileContent('package.json', {
+      name: 'test-app',
+      repository: 'fossamagna/test-app',
+      author: {
+        name: 'Full Name',
+        email: 'fossamagna2@gmail.com'
+      }
+    });
 	});
 });
