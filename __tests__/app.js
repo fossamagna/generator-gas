@@ -25,10 +25,5 @@ describe('generator-gas:app', () => {
       'src/index.js',
       'src/hello.js'
     ]);
-
-    // assert.jsonFileContent('package.json', {
-    //   name: 'test-app',
-    //   repository: 'fossamagna/test-app'
-    // });
 	});
 });
