@@ -16,7 +16,7 @@
       "browserify ./src/index.ts -p tsify -p gasify -o ./dist/Code.js",
     "watch:gs": "watchify ./src/index.ts -p tsify -p gasify -o ./dist/Code.js",
     "build": "npm-run-all clean initialize build:gs",
-    "upload": "claps push",
+    "upload": "clasp push",
     "deploy": "npm-run-all build upload"
   },
   "keywords": ["google", "apps-script"],
