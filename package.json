@@ -1,6 +1,6 @@
 {
   "name": "generator-gas",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Google Apps Script Application Generator",
   "homepage": "https://github.com/fossamagna/generator-gas",
   "author": {
