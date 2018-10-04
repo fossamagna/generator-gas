@@ -10,8 +10,8 @@
     "watch": "npm-run-all initialize -p watch:gs",
     "prefetch:manifest": "npm-run-all initialize",
     "fetch:manifest": "clasp pull",
-    "postfetch:manifest": "cpx ./dist/appsscript.json ./src/appsscript.json",
-    "prebuild:gs": "cpx ./src/appsscript.json ./dist/appsscript.json",
+    "postfetch:manifest": "cpx ./dist/appsscript.json ./src/",
+    "prebuild:gs": "cpx ./src/appsscript.json ./dist/",
     "build:gs":
       "browserify ./src/index.ts -p tsify -p gasify -o ./dist/Code.js",
     "watch:gs": "watchify ./src/index.ts -p tsify -p gasify -o ./dist/Code.js",
