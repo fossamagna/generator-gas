@@ -22,7 +22,7 @@
     "husky": "^1.0.0",
     "jest": "^23.4.2",
     "jest-cli": "^23.4.2",
-    "lint-staged": "^7.2.0",
+    "lint-staged": "^8.0.1",
     "nsp": "^3.2.1",
     "prettier": "^1.7.0",
     "yeoman-assert": "^3.1.0",
