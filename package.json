@@ -39,7 +39,7 @@
     "collectCoverage": true
   },
   "scripts": {
-    "prepublish": "nsp check",
+    "prepublishOnly": "npm audit --audit-level high",
     "pretest": "eslint .",
     "precommit": "lint-staged",
     "test": "jest"
