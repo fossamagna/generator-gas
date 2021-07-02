@@ -19,7 +19,7 @@
   "devDependencies": {
     "coveralls": "^3.0.2",
     "eslint": "^7.25.0",
-    "husky": "^4.0.3",
+    "husky": "^7.0.0",
     "jest": "^27.0.4",
     "jest-cli": "^27.0.1",
     "lint-staged": "^11.0.0",
