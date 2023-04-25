@@ -19,10 +19,10 @@
   "devDependencies": {
     "coveralls": "^3.0.2",
     "eslint": "^7.25.0",
-    "husky": "^4.0.3",
+    "husky": "^8.0.3",
     "jest": "^27.0.4",
     "jest-cli": "^27.0.1",
-    "lint-staged": "^11.0.0",
+    "lint-staged": "^13.2.1",
     "nsp": "^3.2.1",
     "prettier": "^2.3.2",
     "yeoman-assert": "^3.1.0",
